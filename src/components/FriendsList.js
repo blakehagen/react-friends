@@ -1,6 +1,20 @@
 import React from 'react';
 
 class FriendsList extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      searchText: '',
+      orderBy: 'name',
+      order: 'ascending'
+    };
+  }
+
+  handleChange(field, event) {
+    this.setState({[field]: event.target.value});
+  }
+
   render() {
     return (
       <div>
@@ -29,4 +43,4 @@ class FriendsList extends React.Component {
   }
 }
 
-export default FriendsList
+export default FriendsList;
